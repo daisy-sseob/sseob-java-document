@@ -50,4 +50,4 @@
   - 메소드가 컴파일되면 JVM이 해당 메소드의 컴파일된 코드를 해석하지 않고 바로 호출한다.
 
 ### 구조
-![ref https://www.geeksforgeeks.org/compilation-execution-java-program/](./java.jpg)
+![ref https://www.geeksforgeeks.org/compilation-execution-java-program/](src/java/example/java02/java.jpg)
