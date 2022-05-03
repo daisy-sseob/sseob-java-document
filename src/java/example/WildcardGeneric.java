@@ -1,4 +1,4 @@
-package com.sseob;
+package java.example;
 
 public class WildcardGeneric<W> {
 
