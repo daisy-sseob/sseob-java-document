@@ -1,4 +1,4 @@
-package java.example.java01;
+package com.demo.classes;
 
 public class DoorLockManager {
 	

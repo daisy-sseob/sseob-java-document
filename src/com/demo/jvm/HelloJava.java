@@ -1,4 +1,4 @@
-package java.example.java02;
+package com.demo.jvm;
 
 public class HelloJava {
 	
