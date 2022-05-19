@@ -1,6 +1,6 @@
-package com.demo.inherit;
+package com.example.demo.inherit;
 
-public class Child extends Parent{
+public class Child extends Parent {
 
 	public String printPrivate() {
 		System.out.println("printPrivate() - child");

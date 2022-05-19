@@ -1,4 +1,4 @@
-package com.demo.classes;
+package com.example.demo.classes;
 
 public class DoorLockManager {
 	

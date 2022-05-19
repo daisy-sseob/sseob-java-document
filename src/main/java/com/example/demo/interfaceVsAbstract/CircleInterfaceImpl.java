@@ -1,6 +1,15 @@
 package com.example.demo.interfaceVsAbstract;
 
-public class CircleImpl implements CircleInterface {
+public class CircleInterfaceImpl implements CircleInterface {
 
-	
+	private String color;
+
+	@Override
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
 }

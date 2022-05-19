@@ -1,4 +1,4 @@
-package com.demo.inherit;
+package com.example.demo.inherit;
 
 public class InheritMain {
 

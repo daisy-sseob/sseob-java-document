@@ -1,10 +1,14 @@
-package main.java.com.example.demo.diffrent;
+package com.example.demo.interfaceVsAbstract;
+
+import java.util.Arrays;
+import java.util.List;
 
 public interface CircleInterface {
 
+	final List<String> allowedColors = Arrays.asList("Red", "Green", "Blue");
 	String getColor();
-	
-	default boolean isValid(String color) {
-		return true;
+
+	default boolean isValid() {
+		return allowedColors.contains(getColor());
 	}
 }

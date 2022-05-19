@@ -1,5 +1,5 @@
-package main.java.com.example.demo.diffrent;
+package com.example.demo.interfaceVsAbstract;
 
-public class ChildCircleClass extends CircleAbstractClass{
+public class ChildCircleClass extends CircleAbstractClass {
 	
 }

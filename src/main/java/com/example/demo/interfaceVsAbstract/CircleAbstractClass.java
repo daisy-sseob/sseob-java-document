@@ -1,4 +1,4 @@
-package main.java.com.example.demo.diffrent;
+package com.example.demo.interfaceVsAbstract;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 public abstract class CircleAbstractClass {
 
 	private String color;
-	private List<String> allowedColors = Arrays.asList("Red", "Green", "Blue");
+	private final List<String> allowedColors = Arrays.asList("Red", "Green", "Blue");
 	
 	public boolean isValid() {
 		return allowedColors.contains(getColor());
