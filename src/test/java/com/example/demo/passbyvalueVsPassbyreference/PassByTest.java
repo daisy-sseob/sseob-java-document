@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PassByTest {
-	
-	PassBy passBy = new PassBy();
 
 	@DisplayName("passByValue 메소드에서 값이 변하지 않는지 테스트.")
 	@Test
@@ -17,20 +15,26 @@ class PassByTest {
 		int number = 1;
 		String str = "abc";
 
+		PassBy passBy = new PassBy();
 		passBy.passByValue(number, str);
 
 		assertEquals(1, number);
 		assertEquals("abc", str);
+		
+		// Test passed
 	}
 	
-	@DisplayName("passByReference Reference의 변경 테스트")
+	@DisplayName("passByReference username의 값이 변하지 않는지 테스트")
 	@Test
 	public void passByReferenceTest() {
 		Member member = new Member();
 		member.setUsername("sseob");
 
+		PassBy passBy = new PassBy();
 		passBy.passByReference(member);
 
-		assertEquals("현섭", member.getUsername());
+		assertEquals("sseob", member.getUsername());
+		
+		// Tests failed
 	}
 }

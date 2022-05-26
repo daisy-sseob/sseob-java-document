@@ -10,6 +10,6 @@ public class PassBy {
 	}
 
 	public void passByReference(Member member) {
-		member.setUsername("sseob");
+		member.setUsername("현섭");
 	}
 }
