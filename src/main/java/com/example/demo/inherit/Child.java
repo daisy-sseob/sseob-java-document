@@ -2,8 +2,12 @@ package com.example.demo.inherit;
 
 public class Child extends Parent {
 
-	public String printPrivate() {
-		System.out.println("printPrivate() - child");
-		return "printPrivate() - child";
+	public Child() {
+		super("test");
+	}
+
+	@Override
+	public int getMultipleNumber(int number) {
+		return number * 20;
 	}
 }
