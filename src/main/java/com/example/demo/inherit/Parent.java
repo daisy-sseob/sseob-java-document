@@ -1,7 +1,10 @@
 package com.example.demo.inherit;
 
 public class Parent {
-	
+
+	public Parent() {
+	}
+
 	public void print() {
 		System.out.println("print() - parent");
 	}
