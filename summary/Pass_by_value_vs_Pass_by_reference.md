@@ -15,14 +15,14 @@ Pass by reference : 참조(주소값)을 전달한다.**
 ```java
 public class PassBy {
 	
-	public void passByValue(int number, String str) {
-		number = 20;
-		str = "변경";
-	}
-
-	public void passByReference(Member member) {
-		member.setUsername("현섭");
-	}
+    public void passByValue(int number, String str) {
+        number = 20;
+        str = "변경";
+    }
+    
+    public void passByReference(Member member) {
+        member.setUsername("현섭");
+    }
 }
 ```
 
@@ -36,35 +36,35 @@ public class Member {
 
 class PassByTest {
 
-	@DisplayName("passByValue 메소드에서 값이 변하지 않는지 테스트.")
-	@Test
-	public void passByValueTest() {
+    @DisplayName("passByValue 메소드에서 값이 변하지 않는지 테스트.")
+    @Test
+    public void passByValueTest() {
+    
+        int number = 1;
+        String str = "abc";
+        
+        PassBy passBy = new PassBy();
+        passBy.passByValue(number, str);
+        
+        assertEquals(1, number);
+        assertEquals("abc", str);
+        
+        // Test passed
+    }
 
-		int number = 1;
-		String str = "abc";
-
-		PassBy passBy = new PassBy();
-		passBy.passByValue(number, str);
-
-		assertEquals(1, number);
-		assertEquals("abc", str);
-		
-		// Test passed
-	}
-
-	@DisplayName("passByReference username의 값이 변하지 않는지 테스트")
-	@Test
-	public void passByReferenceTest() {
-		Member member = new Member();
-		member.setUsername("sseob");
-
-		PassBy passBy = new PassBy();
-		passBy.passByReference(member);
-
-		assertEquals("sseob", member.getUsername());
-		
-		// Tests failed
-	}
+    @DisplayName("passByReference username의 값이 변하지 않는지 테스트")
+    @Test
+    public void passByReferenceTest() {
+        Member member = new Member();
+        member.setUsername("sseob");
+    
+        PassBy passBy = new PassBy();
+        passBy.passByReference(member);
+    
+        assertEquals("sseob", member.getUsername());
+        
+        // Tests failed
+    }
 }
 ```
 

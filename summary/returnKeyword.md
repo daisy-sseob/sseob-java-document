@@ -17,12 +17,12 @@ Java에서 메소드가 종료되는 조건은 아래와 같다.
 
 ```java
 public int getSomeNumber(){
-	int number = 0;
-	if(number == 0){
-		return number;
-	} else {
-    return --number;
-  } 
+   int number = 0;
+   if(number == 0){
+     return number;
+   } else {
+     return --number;
+   } 
 }
 ```
 
@@ -39,8 +39,8 @@ public int getSomeNumber(){
 ```java
 public void foo(){
 
-	// some logic
-
-	return;
+   // some logic
+   
+   return;
 }
 ```

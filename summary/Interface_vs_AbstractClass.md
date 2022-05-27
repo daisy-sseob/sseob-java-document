@@ -12,21 +12,21 @@
 
 ```java
 public interface CircleInterface {
-	boolean isValid(String color);
+    boolean isValid(String color);
 }
 
 public class CircleInterfaceImpl_A implements CircleInterface {
 
-	public boolean isValid(String color) {
-			// ... 생략
-	}
+    public boolean isValid(String color) {
+            // ... 생략
+    }
 }
 
 public class CircleInterfaceImpl_B implements CircleInterface {
 
-	public boolean isValid(String color) {
-			// ... 생략
-	}
+    public boolean isValid(String color) {
+        // ... 생략
+    }
 }
 ```
 
