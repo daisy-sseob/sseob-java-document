@@ -11,7 +11,7 @@ public class Child extends Parent {
 }
 ```
 
-- 상속은 **extends** 키워드를 통해 받을 수 있다. **extends** 는 **“확장하다”**라는 뜻인데 단어의 뜻 처럼 코드를 읽으면 **Child 클래스는 Parent클래스를 확장한다.** 라고 생각하면 된다.
+- 상속은 **extends** 키워드를 통해 받을 수 있다. **extends** 는 **“확장하다”** 라는 뜻인데,  코드를 한국어로 번역해서 읽으면 **Child 클래스는 Parent클래스를 확장한다.** 라고 생각하면 된다.
 - 예제의 **Parent 클래스**를 확장하면 **Parent** 클래스의 선언되어 있는 **public, protected**로 선언 되어 있는 모든 변수와 메소드를 사용할 수 있다.
 - **package-private, private**으로 선언 되어 있는 변수나 메소드는 상속받지 못하기 때문에 사용할 수 없다.
 - 다중 상속이 불가능하다. 하나의 클래스만 상속받을 수 있다.
@@ -21,22 +21,22 @@ public class Child extends Parent {
 ```java
 public class Parent {
 
-	// default constructor
-	public Parent() {
-
-	}
+   // default constructor
+   public Parent() {
+   
+   }
 }
 
 public class Main {
-	public static void main(String[] args) {
-			Child child = new Child();
-	}
+    public static void main(String[] args) {
+         Child child = new Child();
+    }
 }
 ```
 
 **Child 클래스가 Parent클래스를 상속(확장)받으려면 Parent 클래스에 기본 생성자가 정의 되어 있어야 한다.**
 
-- **자식(Child)** 클래스를 컴파일할 때 컴파일러는 자식 클래스의 생성자에 `super()`가 추가하여 실행 시키는데 이는 **부모 클래스의 기본 생성자**를 뜻한다. (**super keyword**는 상위 타입의 객체를 뜻한다.)
+- **자식(Child)** 클래스를 컴파일할 때 컴파일러는 자식 클래스의 생성자에 `super()`를 추가하여 실행 시키는데 이는 **부모 클래스의 기본 생성자**를 뜻한다. (**super keyword**는 상위 타입의 객체를 뜻한다.)
 - `super()` 는 반드시 자식 클래스의 생성자에서 가장 첫줄에 선언 되어야 한다. 부모 클래스의 생성자가 먼저 실행이 되어야 한다.
 - 결국 **Child** 클래스의 생성자를 호출하게 되면, **먼저 Parent 클래스의 기본생성자를** 호출하는 것이기 때문에 부모 클래스에는 기본 생성자가 꼭 정의 되어 있어야 한다.
 
@@ -47,17 +47,17 @@ public class Main {
 ```java
 public class Parent {
 
-	private String str;
-
-	// 추가로 기본 생성자를 만들어준다 !
-	public Parent() {
-
-	}
-
-	// 원래 존재하고 있던 생성자.
-	public Parent(String str) {
-		this.str = str;
-	}
+   private String str;
+   
+   // 추가로 기본 생성자를 만들어준다 !
+   public Parent() {
+   
+   }
+   
+   // 원래 존재하고 있던 생성자.
+   public Parent(String str) {
+     this.str = str;
+   }
 }
 ```
 
@@ -67,17 +67,17 @@ public class Parent {
 ```java
 public class Parent {
 
-	private String str;
-
-	public Parent(String str) {
-		this.str = str;
-	}
+   private String str;
+   
+   public Parent(String str) {
+     this.str = str;
+   }
 }
 
 public class Child extends Parent {
 
-	public Child(){
-		super('str');
-	}
+   public Child(){
+     super('str');
+   }
 }
 ```
