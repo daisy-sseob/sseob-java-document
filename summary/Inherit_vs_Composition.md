@@ -1,9 +1,8 @@
 # Inherit_vs_Composition
 
 > 상속과 조합(구성)에 대해 알아보자.
-
-이펙티브 자바 Item 18을 통해 학습.
 > 
+> 이펙티브 자바 Item 18을 통해 학습.
 
 ## 상속의 단점
 
@@ -18,23 +17,23 @@
 ```java
 public class InheritSet<E> extends HashSet<E> {
 
-	private int addCount = 0;
-
-	@Override
-	public boolean add(E e) {
-		addCount++;
-		return super.add(e);
-	}
-
-	@Override
-	public boolean addAll(Collection<? extends E> c) {
-		addCount += c.size();
-		return super.addAll(c);
-	}
-
-	public int getAddCount() {
-		return addCount;
-	}
+   private int addCount = 0;
+   
+   @Override
+   public boolean add(E e) {
+     addCount++;
+     return super.add(e);
+   }
+   
+   @Override
+   public boolean addAll(Collection<? extends E> c) {
+     addCount += c.size();
+     return super.addAll(c);
+   }
+   
+   public int getAddCount() {
+     return addCount;
+   }
 }
 ```
 
@@ -47,10 +46,10 @@ public class InheritSet<E> extends HashSet<E> {
 @Test
 public void inheritSetTest() {
 
-	InheritSet<String>stringInheritSet = new InheritSet<>();
-	stringInheritSet.addAll(Arrays.asList("한방", "두방", "세방", "네방"));
-	assertEquals(8, stringInheritSet.getAddCount());
-
+   InheritSet<String>stringInheritSet = new InheritSet<>();
+   stringInheritSet.addAll(Arrays.asList("한방", "두방", "세방", "네방"));
+   assertEquals(8, stringInheritSet.getAddCount());
+   
    // test passed. actual 8.
 }
 ```
@@ -97,65 +96,65 @@ public void inheritSetTest() {
 // 1
 public class InstrumentedSet<E> extends ForwardingSet<E> {
 	
-	private int addCount = 0;
-
-	public InstrumentedSet(Set<E> set) {
-		super(set);
-	}
-
-	@Override
-	public boolean add(E e) {
-		addCount++;
-		return super.add(e);
-	}
-
-	@Override
-	public boolean addAll(Collection<? extends E> c) {
-		addCount += c.size();
-		return super.addAll(c);
-	}
-
-	public int getAddCount() {
-		return addCount;
-	}
+   private int addCount = 0;
+   
+   public InstrumentedSet(Set<E> set) {
+     super(set);
+   }
+   
+   @Override
+   public boolean add(E e) {
+     addCount++;
+     return super.add(e);
+   }
+   
+   @Override
+   public boolean addAll(Collection<? extends E> c) {
+     addCount += c.size();
+     return super.addAll(c);
+   }
+   
+   public int getAddCount() {
+     return addCount;
+   }
 }
 
 // 2
 public class ForwardingSet<E> implements Set<E> {
 
-	private final Set<E> set;
-	
-	public ForwardingSet(Set<E> set) {this.set = set;}
-	@Override
-	public int size() {return set.size();}
-	@Override
-	public boolean isEmpty() {return set.isEmpty();}
-	@Override
-	public boolean contains(Object o) {return set.contains(o);}
-	@Override
-	public Iterator<E> iterator() {return set.iterator();}
-	@Override
-	public Object[] toArray() {return set.toArray();}
-	@Override
-	public <T> T[] toArray(T[] a) {return set.toArray(a);}
-	@Override
-	public boolean add(E e) {return set.add(e);}
-	@Override
-	public boolean remove(Object o) {return set.remove(o);}
-	@Override
-	public boolean containsAll(Collection<?> c) {return set.containsAll(c);}
-	@Override
-	public boolean addAll(Collection<? extends E> c) {return set.addAll(c);}
-	@Override
-	public boolean retainAll(Collection<?> c) {return set.retainAll(c);}
-	@Override
-	public boolean removeAll(Collection<?> c) {return set.removeAll(c);}
-	@Override
-	public void clear() {set.clear();}
-	@Override
-	public boolean equals(Object o) {return set.equals(o);}
-	@Override
-	public int hashCode() {return set.hashCode();}
+   private final Set<E> set;
+   
+   public ForwardingSet(Set<E> set) {this.set = set;}
+   @Override
+   public int size() {return set.size();}
+   @Override
+   public boolean isEmpty() {return set.isEmpty();}
+   @Override
+   public boolean contains(Object o) {return set.contains(o);}
+   @Override
+   public Iterator<E> iterator() {return set.iterator();}
+   @Override
+   public Object[] toArray() {return set.toArray();}
+   @Override
+   public <T> T[] toArray(T[] a) {return set.toArray(a);}
+   @Override
+   public boolean add(E e) {return set.add(e);}
+   @Override
+   public boolean remove(Object o) {return set.remove(o);}
+   @Override
+   public boolean containsAll(Collection<?> c) {return set.containsAll(c);}
+   @Override
+   public boolean addAll(Collection<? extends E> c) {return set.addAll(c);}
+   @Override
+   public boolean retainAll(Collection<?> c) {return set.retainAll(c);}
+   @Override
+   public boolean removeAll(Collection<?> c) {return set.removeAll(c);}
+   @Override
+   public void clear() {set.clear();}
+   @Override
+   public boolean equals(Object o) {return set.equals(o);}
+   @Override
+   public int hashCode() {return set.hashCode();}
 }
 ```
 
@@ -165,11 +164,11 @@ public class ForwardingSet<E> implements Set<E> {
 @Test
 public void compositionSetTest() {
 
-	InstrumentedSet<String>instrumentedSet = new InstrumentedSet<>(new HashSet<>());
-	instrumentedSet.addAll(Arrays.asList("한방", "두방", "세방", "네방"));
-	assertEquals(4, instrumentedSet.getAddCount());
-
-	// test passed. actual 4
+   InstrumentedSet<String>instrumentedSet = new InstrumentedSet<>(new HashSet<>());
+   instrumentedSet.addAll(Arrays.asList("한방", "두방", "세방", "네방"));
+   assertEquals(4, instrumentedSet.getAddCount());
+   
+   // test passed. actual 4
 }
 ```
 
@@ -207,7 +206,7 @@ public void compositionSetTest() {
 
 클래스 A를 상속하는 클래스 B를 작성하려 한다면 **“B가 정말 A인가 ?”** 생각해보자.
 
-**“그렇다”**고 확신할 수 없다면 B는 A를 상속(확장)해서는 안된다.
+**“그렇다”** 고 확신할 수 없다면 B는 A를 상속(확장)해서는 안된다.
 
 대답이 **“아니다”** 라면 A를 private 인스턴스로 두고, A와 다른 API를 제공해야 하는 상황이 대다수다.
 
