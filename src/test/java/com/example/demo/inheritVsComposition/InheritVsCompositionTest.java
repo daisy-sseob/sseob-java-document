@@ -18,14 +18,16 @@ class InheritVsCompositionTest {
 
 		assertEquals(8, stringInheritSet.getAddCount());
 		
-		// but actual 8....
+		// test passed. actual 8.
 	}
 
 	@Test
 	public void compositionSetTest() {
-		CompositionSet<String> compositionSet = new CompositionSet<>(new HashSet<>());
-		compositionSet.addAll(Arrays.asList("한방", "두방", "세방", "네방"));
+		InstrumentedSet<String> instrumentedSet = new InstrumentedSet<>(new HashSet<>());
+		instrumentedSet.addAll(Arrays.asList("한방", "두방", "세방", "네방"));
 		
-		assertEquals(4, compositionSet.getAddCount());
+		assertEquals(4, instrumentedSet.getAddCount());
+		
+		// test passed. actual 4
 	}
 }

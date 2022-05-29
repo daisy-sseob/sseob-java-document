@@ -3,7 +3,6 @@ package com.example.demo.inheritVsComposition;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
-import java.util.Spliterator;
 
 public class ForwardingSet<E> implements Set<E> {
 
@@ -86,10 +85,5 @@ public class ForwardingSet<E> implements Set<E> {
 	@Override
 	public int hashCode() {
 		return set.hashCode();
-	}
-
-	@Override
-	public Spliterator<E> spliterator() {
-		return set.spliterator();
 	}
 }

@@ -3,11 +3,11 @@ package com.example.demo.inheritVsComposition;
 import java.util.Collection;
 import java.util.Set;
 
-public class CompositionSet<E> extends ForwardingSet<E> {
+public class InstrumentedSet<E> extends ForwardingSet<E> {
 	
 	private int addCount = 0;
 
-	public CompositionSet(Set<E> set) {
+	public InstrumentedSet(Set<E> set) {
 		super(set);
 	}
 
