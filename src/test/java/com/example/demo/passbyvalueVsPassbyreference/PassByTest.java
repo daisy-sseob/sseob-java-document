@@ -24,7 +24,7 @@ class PassByTest {
 		// Test passed
 	}
 	
-	@DisplayName("passByReference username의 값이 변하지 않는지 테스트")
+	@DisplayName("member 참조를 넘겼기 때문에 username에 String을 새로 할당한다.")
 	@Test
 	public void passByReferenceTest() {
 		Member member = new Member();
@@ -33,7 +33,7 @@ class PassByTest {
 		PassBy passBy = new PassBy();
 		passBy.passByReference(member);
 
-		assertEquals("sseob", member.getUsername());
+		assertEquals("현섭", member.getUsername());
 		
 		// Tests failed
 	}
