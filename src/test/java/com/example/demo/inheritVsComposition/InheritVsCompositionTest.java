@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class InheritVsCompositionTest {
 
-	@DisplayName("add All method를 통해 count를 4증가 시켰으니 4가 나오기를 기대한다...")
+	@DisplayName("add All method를 통해 count를 4증가 시켰으니 4가 나오기를 기대하겠지만 실제로는 8을 return 한다...")
 	@Test
 	public void inheritSetTest() {
 		InheritSet<String> stringInheritSet = new InheritSet<>();
