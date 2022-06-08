@@ -1,12 +1,12 @@
 HELP.md
 target/
-!.mvn/wrapper/maven-wrapper.jar
+!.mvn/delegateWrapper/maven-delegateWrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
 .gradle
 build/
-!gradle/wrapper/gradle-wrapper.jar
+!gradle/delegateWrapper/gradle-delegateWrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
 

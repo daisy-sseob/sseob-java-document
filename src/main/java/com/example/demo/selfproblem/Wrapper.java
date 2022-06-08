@@ -1,20 +1,25 @@
 package com.example.demo.selfproblem;
 
-public class Wrapper implements SomethingWithCallback {
+public class Wrapper extends DelegateWrappedObject {
 
-	private final WrappedObject wrappedObject;
+	private int callCount = 0;
 
-	public Wrapper(WrappedObject wrappedObject) {
-		this.wrappedObject = wrappedObject;
+	public Wrapper(SomethingWithCallback somethingWithCallback) {
+		super(somethingWithCallback);
 	}
 
 	@Override
 	public void doSomething() {
-		wrappedObject.doSomething();
+		super.doSomething();
 	}
 
 	@Override
 	public void call() {
-		System.out.println("Wrapper callback ! ");
+		callCount++;
+		super.call();
+	}
+	
+	public int getCallCount() {
+		return callCount;
 	}
 }

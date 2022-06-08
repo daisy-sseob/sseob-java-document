@@ -1,6 +1,6 @@
 package com.example.demo.selfproblem;
 
-public class WrappedObject implements SomethingWithCallback{
+public class WrappedObject implements SomethingWithCallback {
 
 	private final SomeService someService;
 
